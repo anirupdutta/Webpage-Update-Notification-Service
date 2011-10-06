@@ -1,0 +1,30 @@
+
+Webpage Update Notification Service using php cli
+
+Tested on Kubuntu 11.04 with php 5.3
+
+To run server.php
+
+1>	sudo chmod 755 server.php
+2>	./server.php 11000       (11000 indicates the port of the server)
+
+
+To run client_callback.php 
+
+1>	sudo chmod 755 client_callback.php
+2>	./client_callback.php 12000       (12000 indicates the port of the client_callback)
+
+To run client_configure.php 
+
+1>	sudo chmod 755 client_configure.php
+2>	./client_configure.php subscribe/unsubscribe server-ipaddr server-port callback-ipaddr callback-port url
+
+For any questions/queries contact me at adutta2@uh.edu
+
+No need to create cache directory or database file.They will be automatically created.
+Multhreading is not supported by php's architecture so had to use forking of process to achieve 
+multithreading simulation.
+
+Uses getcwd() to get path of the current directory.
+
+On some Unix variants, getcwd() will return FALSE if any one of the parent directories does not have the readable or search mode set, even if the current directory does. See chmod() for more information on modes and permissions.   
